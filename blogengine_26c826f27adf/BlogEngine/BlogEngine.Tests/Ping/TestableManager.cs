@@ -63,19 +63,17 @@ namespace BlogEngine.Tests.Ping
 
     public class TestableTrackbackMessage : TrackbackMessage
     {
-        private readonly string _blogName;
-
         public TestableTrackbackMessage(IPublishable item, Uri urlToNotifyTrackback, Uri itemUrl, string blogName)
             : base(item, urlToNotifyTrackback, itemUrl)
         {
-            _blogName = blogName;
+            BlogName = blogName;
         }
 
         public TestableTrackbackMessage(IPublishable item, Uri urlToNotifyTrackback, Uri itemUrl) : base(item, urlToNotifyTrackback, itemUrl){}
 
         protected override string GetBlogName()
         {
-            return _blogName;
-        }
+            return "";
+        }
     }
 }
